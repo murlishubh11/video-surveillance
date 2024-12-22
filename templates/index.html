@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Video Surveillance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add custom styling here for home page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: #ecf0f1;
+            margin: 0;
+        }
+
+        .navbar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #34495e;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #2980b9;
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3498db;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .navbar h1 {
+                font-size: 18px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <h1>Video Surveillance System</h1>
+        <div>
+            <span>Welcome, {{ session['username'] }} </span>
+            <a href="{{ url_for('video_feed') }}" class="btn">Go to Video Feed</a>
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2>Welcome to Your Dashboard</h2>
+        <p>Your video surveillance system is up and running. You can access live video feeds and monitor motion detection activities.</p>
+        <p>Click the button below to start viewing the live video feed:</p>
+        <a href="{{ url_for('video_feed') }}" class="btn">View Video Feed</a>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Video Surveillance System. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
