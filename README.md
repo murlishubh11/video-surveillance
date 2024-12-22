@@ -1,7 +1,7 @@
-Video Surveillance Web App
+#Video Surveillance Web App
 This project is a simple Flask-based web application that allows you to stream video and monitor video feeds through a web interface. It works on macOS, Windows, and Linux, provided the necessary dependencies are installed.
 
-Prerequisites
+##Prerequisites
 Make sure you have the following installed on your system:
 
 Python 3.7+ (recommended version 3.11)
@@ -69,33 +69,7 @@ Access the Web Interface
 
 Open a web browser and go to http://127.0.0.1:5000/. You will be able to interact with the video surveillance web interface.
 
-Troubleshooting
-Error: "Could not open video device"
-If you receive an error like:
 
-arduino
-Copy code
-RuntimeError: Could not open video device
-It indicates that the application cannot access your webcam. Here are potential solutions:
-
-On macOS: Use a virtual webcam tool like CamTwist or Loopback.
-On Windows/Linux: Make sure your webcam is properly connected and functional. Ensure no other application is using the webcam.
-Project Structure
-php
-Copy code
-video_surveillance/
-│
-├── app.py                # Main Flask application
-├── templates/            # HTML templates for the web interface
-│   ├── index.html        # Main page
-│   ├── login.html        # Login page
-│   └── register.html     # Registration page
-│
-├── static/               # Static files like CSS
-│   └── styles.css        # Styling for the web app
-│
-├── requirements.txt      # List of Python dependencies
-└── README.md             # This file
-License
+##License
 This project is open-source and available under the MIT License.
 
